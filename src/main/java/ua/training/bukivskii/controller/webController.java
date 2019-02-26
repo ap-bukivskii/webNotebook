@@ -7,60 +7,60 @@ import javax.servlet.http.HttpServletRequest;
 
 public class webController {
 
-    public static boolean requestIsValid(final HttpServletRequest req) {
-
-        //req.getParameterNames();
-        if(!req.getParameter("firstName").matches(Regexps.firstNameRegexp)){
-            return false;
-        }
-        if(!req.getParameter("lastName").matches(Regexps.lastNameRegexp)){
-            return false;
-        }
-        if(!req.getParameter("middleName").matches(Regexps.middleNameRegexp)){
-            return false;
-        }
-        if(!req.getParameter("login").matches(Regexps.loginRegexp)){
-            return false;
-        }
-        if(!req.getParameter("comment").matches(Regexps.commentRegexp)){
-            return false;
-        }
-        if(!req.getParameter("groups").matches(Regexps.groupsRegexp)){
-            return false;
-        }
-        if(!req.getParameter("homePhone").matches(Regexps.homePhoneNumberRegexp)){
-            return false;
-        }
-        if(!req.getParameter("cellPhone").matches(Regexps.cellPhoneNumberRegexp)){
-            return false;
-        }
-        if(!req.getParameter("cellPhone2").matches(Regexps.cellPhoneNumber2Regexp)){
-            return false;
-        }
-        if(!req.getParameter("email").matches(Regexps.emailRegexp)){
-            return false;
-        }
-        if(!req.getParameter("skypeName").matches(Regexps.skypeNameRegexp)){
-            return false;
-        }
-        if(!req.getParameter("index").matches(Regexps.indexRegexp)){
-            return false;
-        }
-        if(!req.getParameter("city").matches(Regexps.cityRegexp)){
-            return false;
-        }
-        if(!req.getParameter("street").matches(Regexps.streetRegexp)){
-            return false;
-        }
-        if(!req.getParameter("house").matches(Regexps.houseRegexp)){
-            return false;
-        }
-        if(!req.getParameter("appartment").matches(Regexps.appartmentRegexp)){
-            return false;
-        }
-
-        return true;
-    }
+//    public static String requestIsValid(final HttpServletRequest req) {
+//
+//        //req.getParameterNames();
+//        if(!req.getParameter("firstName").matches(Regexps.firstNameRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("lastName").matches(Regexps.lastNameRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("middleName").matches(Regexps.middleNameRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("login").matches(Regexps.loginRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("comment").matches(Regexps.commentRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("groups").matches(Regexps.groupsRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("homePhone").matches(Regexps.homePhoneNumberRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("cellPhone").matches(Regexps.cellPhoneNumberRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("cellPhone2").matches(Regexps.cellPhoneNumber2Regexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("email").matches(Regexps.emailRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("skypeName").matches(Regexps.skypeNameRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("index").matches(Regexps.indexRegexp)){
+//            return "";
+//        }
+//        if(!req.getParameter("city").matches(Regexps.cityRegexp)){
+//            return "city";
+//        }
+//        if(!req.getParameter("street").matches(Regexps.streetRegexp)){
+//            return "street";
+//        }
+//        if(!req.getParameter("house").matches(Regexps.houseRegexp)){
+//            return "house";
+//        }
+//        if(!req.getParameter("appartment").matches(Regexps.appartmentRegexp)){
+//            return "appartment";
+//        }
+//
+//        return "goodData";
+//    }
 
     public static Abonent createAbonent(final HttpServletRequest request){
         Abonent tempAbonent = new Abonent();

@@ -1,11 +1,11 @@
 package ua.training.bukivskii.controller;
 
 public interface Regexps {
-    String firstNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ\\,\\.\\- `']{2,31}$"; // Martin Luther King, Jr. ; де Бальзак
-    String lastNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ\\,\\.\\- `']{1,31}$";
-    String middleNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ\\,\\.\\- `']{1,31}$"; // Martin Luther King, Sr. ; I Li ; Ю Лі
-    String shortNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ\\,\\.\\- `']{2,31}$";
-    String loginRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ\\,\\. \\-_0-9\\[\\]\\(\\)`']{1,31}$";
+    String firstNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ,\\.\\- `']{2,31}$"; // Martin Luther King, Jr. ; де Бальзак
+    String lastNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ,\\.\\- `']{1,31}$";
+    String middleNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ,\\.\\- `']{1,31}$"; // Martin Luther King, Sr. ; I Li ; Ю Лі
+    String shortNameRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ,\\.\\- `']{2,31}$";
+    String loginRegexp = "^[a-zA-Zа-яА-ЯїЇєЄіІ,\\.\\-_0-9\\[\\]\\(\\)`']{1,31}$";
     String commentRegexp = ".*";
     String groupsRegexp = "^(([a-zA-Z]{5,6} ?)|([1-5] ?)){0,5}$";
     String homePhoneNumberRegexp = "^\\+\\([2-9]{1}\\d{2}\\)[ \\-]?\\d{2}[ \\-]?\\d{3}[ \\-]?\\d{4}$";

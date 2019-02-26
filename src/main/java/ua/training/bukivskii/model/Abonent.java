@@ -55,29 +55,43 @@ public class Abonent {
         this.updateLastChanged();
     }
 
-//    public Abonent(String[] ab){
-//        this.firstName = ab.getFirstName();
-//        this.lastName = ab.getLastName();
-//        this.middleName = ab.getMiddleName();
-//        this.shortName = ab.getShortName();
-//        this.nickName = ab.getNickName();
-//        this.comment = ab.getComment();
-//        this.groups = new CopyOnWriteArrayList<>();
-//        this.groups = ab.getGroups();
-//        this.homePhoneNumber = ab.getHomePhoneNumber();
-//        this.cellPhoneNumber = ab.getCellPhoneNumber();
-//        this.cellPhoneNumber2 = ab.getCellPhoneNumber2();
-//        this.email = ab.getEmail();
-//        this.skypeName = ab.getSkypeName();
-//        this.index = ab.getIndex();
-//        this.city = ab.getCity();
-//        this.street = ab.getStreet();
-//        this.house = ab.getHouse();
-//        this.appartment = ab.getAppartment();
-//        this.adressLong = ab.getAdressLong();
-//        this.dateOfCreation = ab.getDateOfCreation();
-//        this.updateLastChanged();
-//    }
+    public Abonent(String firstName ,
+                   String lastName ,
+                   String middleName ,
+                   String nickName ,
+                   String comment ,
+                   CopyOnWriteArrayList<Groups> groups ,
+                   String homePhoneNumber ,
+                   String cellPhoneNumber ,
+                   String cellPhoneNumber2 ,
+                   String email ,
+                   String skypeName ,
+                   String index ,
+                   String city ,
+                   String street ,
+                   String house ,
+                   String appartment ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.generateShortName();
+        this.nickName = nickName;
+        this.comment = comment;
+        this.groups = groups;
+        this.homePhoneNumber = homePhoneNumber;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.cellPhoneNumber2 = cellPhoneNumber2;
+        this.email = email;
+        this.skypeName = skypeName;
+        this.index = index;
+        this.city = city;
+        this.street = street;
+        this.house = house;
+        this.appartment = appartment;
+        this.generateAdressLong();
+        this.setDateOfCreation();
+        this.updateLastChanged();
+    }
 
     public String getFirstName() {
         return firstName;
@@ -277,23 +291,23 @@ public class Abonent {
         tmp.append("Last name: ").append(this.getLastName()).append("\n");
         tmp.append("Middle name: ").append( this.getMiddleName()).append("\n");
         tmp.append("Login: ").append( this.getNickName()).append("\n");
-//        tmp.append("Comment: ").append( this.getComment()).append("\n");
-//
-//        tmp.append("Group(s): ");
-//        for(Groups g: this.getGroups()) {
-//            tmp.append(g.name).append(" ");
-//        }
-//        tmp.append("\n");
-//
-//        tmp.append("Homephone: ").append( this.getHomePhoneNumber()).append("\n");
-//        tmp.append("Cell phone: ").append( this.getCellPhoneNumber()).append("\n");
-//        tmp.append("Additional cell phone: ").append( this.getCellPhoneNumber2()).append("\n");
-//        tmp.append("E-mail: ").append( this.getEmail()).append("\n");
-//        tmp.append("Skype name: ").append( this.getSkypeName()).append("\n");
-//        tmp.append("Address: ").append( this.getAdressLong()).append("\n");
-//
-//        tmp.append("Created on: ").append( this.getDateOfCreation()).append("\n");
-//        tmp.append("Last changed on: ").append( this.getLastChanged()).append("\n");
+        tmp.append("Comment: ").append( this.getComment()).append("\n");
+
+        tmp.append("Group(s): ");
+        for(Groups g: this.getGroups()) {
+            tmp.append(g.name).append(" ");
+        }
+        tmp.append("\n");
+
+        tmp.append("Homephone: ").append( this.getHomePhoneNumber()).append("\n");
+        tmp.append("Cell phone: ").append( this.getCellPhoneNumber()).append("\n");
+        tmp.append("Additional cell phone: ").append( this.getCellPhoneNumber2()).append("\n");
+        tmp.append("E-mail: ").append( this.getEmail()).append("\n");
+        tmp.append("Skype name: ").append( this.getSkypeName()).append("\n");
+        tmp.append("Address: ").append( this.getAdressLong()).append("\n");
+
+        tmp.append("Created on: ").append( this.getDateOfCreation()).append("\n");
+        tmp.append("Last changed on: ").append( this.getLastChanged()).append("\n");
 
         return new String(tmp);
     }

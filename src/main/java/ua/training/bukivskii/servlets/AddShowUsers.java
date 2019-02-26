@@ -1,11 +1,10 @@
 package ua.training.bukivskii.servlets;
 
+import ua.training.bukivskii.controller.RegexpsToWeb;
 import ua.training.bukivskii.model.LoginAlreadyExistsException;
 import ua.training.bukivskii.model.Notebook;
 import ua.training.bukivskii.view.webView;
 import ua.training.bukivskii.controller.webController;
-
-
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -15,8 +14,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class AddShowUsers extends HttpServlet {
 
     private Notebook notebook;
-    public String errorHandling;
-    public CopyOnWriteArrayList<String> notes;
+
+    private String errorHandling;
+    private CopyOnWriteArrayList<String> notes;
     private final static String index = "/users.jsp";
 
     @Override
@@ -28,9 +28,9 @@ public class AddShowUsers extends HttpServlet {
             throws ServletException,IOException {
 
         notes = webView.notebookToWebList(notebook);
-        //System.out.println(notes);
         httpServletRequest.setAttribute("notes", notes);
         httpServletRequest.setAttribute("errorHandling", errorHandling);
+        httpServletRequest.setAttribute("regexps", new RegexpsToWeb()); //TODO is it bad?
         httpServletRequest.getRequestDispatcher(index).forward(httpServletRequest, httpServletResponse);
     }
 
@@ -40,12 +40,12 @@ public class AddShowUsers extends HttpServlet {
 
         req.setCharacterEncoding("UTF8");
 
-        if (!webController.requestIsValid(req)) { //TODO give user some feedback
-            errorHandling = "Sorry! Some fields have errors!";
-            doGet(req, resp);
-            return;
-        }
-        System.out.println("if closed");
+//        if (!webController.requestIsValid(req).equals("goodData")) {
+//            errorHandling = String.format("Sorry! Field %s have errors!", webController.requestIsValid(req));
+//            doGet(req, resp);
+//            return;
+//        }
+
         try {
             notebook.addAbonent(webController.createAbonent(req));
             errorHandling = "Note successfully added!";
@@ -55,7 +55,6 @@ public class AddShowUsers extends HttpServlet {
             doGet(req, resp); //TODO handle exception
             return;
         }
-        System.out.println("caught");
 
         doGet(req, resp);
     }
